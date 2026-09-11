@@ -1,0 +1,12 @@
+# Line endings deterministas: tudo LF no repo, independente de core.autocrlf.
+* text=auto eol=lf
+
+# Binários — nunca normalizar.
+*.woff2 binary
+*.woff  binary
+*.ttf   binary
+*.otf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.ico   binary
