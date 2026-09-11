@@ -21,4 +21,4 @@ export type Categoria = {
 }
 
 /** Aba ativa — navegação por estado, sem router (ver `App.tsx` / `BottomNav`). */
-export type Tela = 'resumo' | 'lancar' | 'historico'
+export type Tela = 'resumo' | 'lancar' | 'historico' | 'backup'

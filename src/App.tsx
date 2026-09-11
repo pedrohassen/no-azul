@@ -1,7 +1,14 @@
 import { useState } from 'react'
+import { AvisoPrimeiroUso } from './components/AvisoPrimeiroUso'
 import { BottomNav } from './components/BottomNav'
+import { LembreteBackup } from './components/LembreteBackup'
 import { categoriasPadrao } from './data/categorias'
-import { inicializarCategoriasPadrao } from './lib/armazenamento'
+import {
+  inicializarCategoriasPadrao,
+  listarTransacoes,
+} from './lib/armazenamento'
+import { precisaLembrarBackup } from './lib/lembreteBackup'
+import { Backup } from './telas/Backup'
 import { Historico } from './telas/Historico'
 import { Lancar } from './telas/Lancar'
 import { Resumo } from './telas/Resumo'
@@ -27,8 +34,18 @@ export default function App() {
     setTela('lancar')
   }
 
+  // Só incomoda com o lembrete se já existe dado pra perder, e não enquanto o
+  // usuário já está na própria tela de Backup.
+  const mostrarLembreteBackup =
+    tela !== 'backup' && listarTransacoes().length > 0 && precisaLembrarBackup()
+
   return (
     <>
+      <AvisoPrimeiroUso />
+      {mostrarLembreteBackup ? (
+        <LembreteBackup aoIrParaBackup={() => irPara('backup')} />
+      ) : null}
+
       <main className="pb-20">
         {tela === 'resumo' ? <Resumo /> : null}
         {tela === 'lancar' ? (
@@ -39,6 +56,7 @@ export default function App() {
           />
         ) : null}
         {tela === 'historico' ? <Historico aoEditar={editar} /> : null}
+        {tela === 'backup' ? <Backup /> : null}
       </main>
       <BottomNav ativa={tela} onMudar={irPara} />
     </>
