@@ -3,8 +3,8 @@
 Controle pessoal de receitas e despesas — webapp instalável (PWA), **sem backend**,
 com todos os dados guardados só no aparelho de quem usa.
 
-> **Projeto conceito de portfólio.** Construído pelo Pedro Hasse Niemczewski pra uso
-> pessoal de verdade — não é trabalho de cliente nem produto com suporte.
+> **Projeto conceito de portfólio**, feito pra uso pessoal de verdade — não é trabalho
+> de cliente nem produto com suporte.
 
 ## Por que sem backend
 
@@ -41,6 +41,4 @@ URL de preview.
 
 ## Licença
 
-MIT — ver [LICENSE](LICENSE). Sem ressalva de conteúdo pessoal (diferente de outros
-projetos do autor): não há dado do Pedro embutido neste repositório — os dados
-financeiros reais vivem só no navegador de quem usa, nunca são commitados.
+MIT — ver [LICENSE](LICENSE).
