@@ -1,5 +1,5 @@
 import type { Tela } from '../types'
-import { IconeHistorico, IconeLancar, IconeResumo } from './Icones'
+import { IconeBackup, IconeHistorico, IconeLancar, IconeResumo } from './Icones'
 
 type BottomNavProps = {
   ativa: Tela
@@ -10,6 +10,7 @@ const abas: { tela: Tela; rotulo: string; Icone: typeof IconeResumo }[] = [
   { tela: 'resumo', rotulo: 'Resumo', Icone: IconeResumo },
   { tela: 'lancar', rotulo: 'Lançar', Icone: IconeLancar },
   { tela: 'historico', rotulo: 'Histórico', Icone: IconeHistorico },
+  { tela: 'backup', rotulo: 'Backup', Icone: IconeBackup },
 ]
 
 /**
