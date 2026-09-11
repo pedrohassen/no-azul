@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { SeletorMesAno } from '../components/SeletorMesAno'
 import {
   excluirTransacao,
   listarCategorias,
@@ -41,7 +42,7 @@ export function Historico({ aoEditar }: HistoricoProps) {
   }
 
   return (
-    <div className="mx-auto max-w-md px-4 py-6">
+    <div className="mx-auto max-w-md px-4 py-6 md:max-w-2xl md:px-8">
       <h1 className="mb-4 font-sans text-xl font-semibold text-ink">
         Histórico
       </h1>
@@ -72,12 +73,7 @@ export function Historico({ aoEditar }: HistoricoProps) {
           ))}
         </select>
 
-        <input
-          type="month"
-          value={filtroMes}
-          onChange={(e) => setFiltroMes(e.target.value)}
-          className="rounded-lg border border-line bg-paper px-3 py-2 font-sans text-sm text-ink"
-        />
+        <SeletorMesAno valor={filtroMes} onChange={setFiltroMes} />
       </div>
 
       {filtradas.length === 0 ? (

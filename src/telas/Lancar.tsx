@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Botao } from '../components/Botao'
 import { CampoValor } from '../components/CampoValor'
 import { ChipCategoria } from '../components/ChipCategoria'
+import { SeletorData } from '../components/SeletorData'
 import {
   gerarId,
   listarCategorias,
@@ -79,7 +80,7 @@ export function Lancar({
   }
 
   return (
-    <div className="mx-auto max-w-md px-4 py-6">
+    <div className="mx-auto max-w-md px-4 py-6 md:max-w-2xl md:px-8">
       <h1 className="mb-6 font-sans text-xl font-semibold text-ink">
         {transacaoEditando ? 'Editar lançamento' : 'Lançar'}
       </h1>
@@ -121,28 +122,25 @@ export function Lancar({
         ))}
       </div>
 
-      <label className="mb-5 block">
-        <span className="mb-1 block font-sans text-sm text-muted">Data</span>
-        <input
-          type="date"
-          value={data}
-          onChange={(e) => setData(e.target.value)}
-          className="w-full rounded-lg border border-line bg-paper px-3 py-2.5 font-sans text-ink outline-none focus:border-azul"
-        />
-      </label>
+      <div className="mb-6 grid gap-5 md:grid-cols-2">
+        <label className="block">
+          <span className="mb-1 block font-sans text-sm text-muted">Data</span>
+          <SeletorData valor={data} onChange={setData} />
+        </label>
 
-      <label className="mb-6 block">
-        <span className="mb-1 block font-sans text-sm text-muted">
-          Descrição (opcional)
-        </span>
-        <input
-          type="text"
-          value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
-          placeholder="Ex.: mercado da semana"
-          className="w-full rounded-lg border border-line bg-paper px-3 py-2.5 font-sans text-ink outline-none placeholder:text-muted/60 focus:border-azul"
-        />
-      </label>
+        <label className="block">
+          <span className="mb-1 block font-sans text-sm text-muted">
+            Descrição (opcional)
+          </span>
+          <input
+            type="text"
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+            placeholder="Ex.: mercado da semana"
+            className="w-full rounded-lg border border-line bg-paper px-3 py-2.5 font-sans text-ink outline-none placeholder:text-muted/60 focus:border-azul"
+          />
+        </label>
+      </div>
 
       {erro ? (
         <p className="mb-4 font-sans text-sm text-vermelho">{erro}</p>
