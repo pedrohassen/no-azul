@@ -7,6 +7,12 @@
  */
 
 :root {
+  /* Reativo à classe .dark — evita que o navegador tematize controles nativos
+     (select, input date, scrollbar) pela preferência do SO, ignorando o tema real
+     da página. Hoje sempre "light" (toggle ainda não existe, ver Fase 4), mas já
+     evita o bug mesmo com o SO do celular em modo escuro. */
+  color-scheme: light;
+
   --paper: #f7f8fa;
   --ink: #14181f;
   --muted: #6b7280;
@@ -17,6 +23,8 @@
 }
 
 .dark {
+  color-scheme: dark;
+
   --paper: #0f1420;
   --ink: #e8ebf1;
   --muted: #8b93a3;
