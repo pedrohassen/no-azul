@@ -19,3 +19,6 @@ export type Categoria = {
   tipo: TipoTransacao | 'ambos'
   cor?: string
 }
+
+/** Aba ativa — navegação por estado, sem router (ver `App.tsx` / `BottomNav`). */
+export type Tela = 'resumo' | 'lancar' | 'historico'
