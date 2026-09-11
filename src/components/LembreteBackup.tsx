@@ -16,7 +16,7 @@ export function LembreteBackup({ aoIrParaBackup }: LembreteBackupProps) {
       : `Já fazem ${dias} dias desde o último backup.`
 
   return (
-    <div className="mx-auto max-w-md px-4 pt-4">
+    <div className="mx-auto max-w-md px-4 pt-4 md:max-w-2xl md:px-8">
       <button
         type="button"
         onClick={aoIrParaBackup}

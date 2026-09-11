@@ -95,7 +95,7 @@ export function Backup() {
   const previa = dadosImportar ? preverMesclagem(dadosImportar) : null
 
   return (
-    <div className="mx-auto max-w-md px-4 py-6">
+    <div className="mx-auto max-w-md px-4 py-6 md:max-w-2xl md:px-8">
       <h1 className="mb-6 font-sans text-xl font-semibold text-ink">Backup</h1>
 
       <section className="mb-6 rounded-xl border border-line p-5">

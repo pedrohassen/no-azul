@@ -31,7 +31,7 @@ export function AvisoPrimeiroUso() {
   if (!visivel) return null
 
   return (
-    <div className="mx-auto max-w-md px-4 pt-4">
+    <div className="mx-auto max-w-md px-4 pt-4 md:max-w-2xl md:px-8">
       <div className="rounded-xl border border-line bg-paper p-4">
         <p className="mb-3 font-sans text-sm text-ink">
           Seus dados ficam só neste dispositivo. Sem backup regular (aba{' '}

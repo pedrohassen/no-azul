@@ -65,3 +65,20 @@ export function IconeLua({ className }: IconeProps) {
     </svg>
   )
 }
+
+export function IconeCalendario({ className }: IconeProps) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <rect x="4" y="5" width="16" height="15" rx="2" />
+      <path d="M4 9.5h16M8 3v3.5M16 3v3.5" />
+    </svg>
+  )
+}
+
+export function IconeSeta({ className }: IconeProps) {
+  return (
+    <svg {...base} className={className} aria-hidden="true">
+      <path d="M9 5l7 7-7 7" />
+    </svg>
+  )
+}
