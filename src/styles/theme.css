@@ -1,0 +1,41 @@
+/*
+ * Tokens do tema (Tailwind v4, CSS-first).
+ * Cores semânticas em :root / .dark, expostas como utilitários via `@theme inline`
+ * (bg-paper, text-ink, border-line, text-azul, text-vermelho, font-sans...).
+ * `azul` = saldo positivo/receita, `vermelho` = saldo negativo/despesa — reforça o
+ * nome do app.
+ */
+
+:root {
+  --paper: #f7f8fa;
+  --ink: #14181f;
+  --muted: #6b7280;
+  --line: #e2e5eb;
+  --azul: #1d4ed8;
+  --vermelho: #b91c1c;
+  --contraste: #ffffff;
+}
+
+.dark {
+  --paper: #0f1420;
+  --ink: #e8ebf1;
+  --muted: #8b93a3;
+  --line: #232a3a;
+  --azul: #5b8cff;
+  --vermelho: #f87171;
+  --contraste: #0f1420;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-azul: var(--azul);
+  --color-vermelho: var(--vermelho);
+  --color-contraste: var(--contraste);
+
+  --font-sans:
+    'Inter Tight Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+}
