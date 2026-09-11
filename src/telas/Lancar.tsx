@@ -127,7 +127,7 @@ export function Lancar({
           type="date"
           value={data}
           onChange={(e) => setData(e.target.value)}
-          className="w-full rounded-lg border border-line px-3 py-2.5 font-sans text-ink outline-none focus:border-azul"
+          className="w-full rounded-lg border border-line bg-paper px-3 py-2.5 font-sans text-ink outline-none focus:border-azul"
         />
       </label>
 
@@ -140,7 +140,7 @@ export function Lancar({
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
           placeholder="Ex.: mercado da semana"
-          className="w-full rounded-lg border border-line px-3 py-2.5 font-sans text-ink outline-none placeholder:text-muted/60 focus:border-azul"
+          className="w-full rounded-lg border border-line bg-paper px-3 py-2.5 font-sans text-ink outline-none placeholder:text-muted/60 focus:border-azul"
         />
       </label>
 

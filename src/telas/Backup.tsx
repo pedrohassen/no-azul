@@ -187,7 +187,7 @@ export function Backup() {
                     value={textoConfirmacao}
                     onChange={(e) => setTextoConfirmacao(e.target.value)}
                     placeholder={TEXTO_CONFIRMACAO}
-                    className="w-full rounded-lg border border-line px-3 py-2 font-sans text-ink outline-none focus:border-vermelho"
+                    className="w-full rounded-lg border border-line bg-paper px-3 py-2 font-sans text-ink outline-none focus:border-vermelho"
                   />
                 </label>
                 <Botao
