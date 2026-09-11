@@ -1,30 +1,25 @@
+import { abasNavegacao } from '../data/navegacao'
 import type { Tela } from '../types'
-import { IconeBackup, IconeHistorico, IconeLancar, IconeResumo } from './Icones'
 
 type BottomNavProps = {
   ativa: Tela
   onMudar: (tela: Tela) => void
 }
 
-const abas: { tela: Tela; rotulo: string; Icone: typeof IconeResumo }[] = [
-  { tela: 'resumo', rotulo: 'Resumo', Icone: IconeResumo },
-  { tela: 'lancar', rotulo: 'Lançar', Icone: IconeLancar },
-  { tela: 'historico', rotulo: 'Histórico', Icone: IconeHistorico },
-  { tela: 'backup', rotulo: 'Backup', Icone: IconeBackup },
-]
-
 /**
- * Navegação fixa no rodapé, tipo app de banco. Sem `react-router` — troca de aba é
- * só estado em `App.tsx`. Respiro extra embaixo pra home indicator do PWA instalado.
+ * Navegação fixa no rodapé, tipo app de banco — só em telas pequenas (`md:hidden`;
+ * ver `Sidebar` pro equivalente em telas médias/grandes). Sem `react-router` —
+ * troca de aba é só estado em `App.tsx`. Respiro extra embaixo pra home indicator
+ * do PWA instalado.
  */
 export function BottomNav({ ativa, onMudar }: BottomNavProps) {
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-10 border-t border-line bg-paper"
+      className="fixed inset-x-0 bottom-0 z-10 border-t border-line bg-paper md:hidden"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="mx-auto flex max-w-md">
-        {abas.map(({ tela, rotulo, Icone }) => {
+        {abasNavegacao.map(({ tela, rotulo, Icone }) => {
           const ativoAgora = tela === ativa
           return (
             <button

@@ -39,28 +39,27 @@ export function Resumo() {
   )
 
   return (
-    <div className="mx-auto max-w-md px-4 py-6">
+    <div className="mx-auto max-w-md px-4 py-6 md:max-w-2xl md:px-8">
       <h1 className="mb-6 font-sans text-xl font-semibold text-ink">Resumo</h1>
 
-      <div className="mb-6 rounded-xl border border-line p-5 text-center">
-        <p className="mb-1 font-sans text-sm text-muted">Saldo</p>
-        <p
-          className={`font-sans text-3xl font-semibold ${
-            saldoTotal >= 0 ? 'text-azul' : 'text-vermelho'
-          }`}
-        >
-          {formatMoeda(saldoTotal)}
-        </p>
-      </div>
-
-      <div className="mb-6 grid grid-cols-2 gap-3">
-        <div className="rounded-xl border border-line p-4">
+      <div className="mb-6 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+        <div className="col-span-2 rounded-xl border border-line p-5 text-center md:col-span-1 md:flex md:flex-col md:justify-center">
+          <p className="mb-1 font-sans text-sm text-muted">Saldo</p>
+          <p
+            className={`font-sans text-3xl font-semibold ${
+              saldoTotal >= 0 ? 'text-azul' : 'text-vermelho'
+            }`}
+          >
+            {formatMoeda(saldoTotal)}
+          </p>
+        </div>
+        <div className="rounded-xl border border-line p-4 md:p-5">
           <p className="mb-1 font-sans text-xs text-muted">Receitas (mês)</p>
           <p className="font-sans text-lg font-medium text-azul">
             {formatMoeda(receitasMes)}
           </p>
         </div>
-        <div className="rounded-xl border border-line p-4">
+        <div className="rounded-xl border border-line p-4 md:p-5">
           <p className="mb-1 font-sans text-xs text-muted">Despesas (mês)</p>
           <p className="font-sans text-lg font-medium text-vermelho">
             {formatMoeda(despesasMes)}

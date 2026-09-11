@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { AvisoPrimeiroUso } from './components/AvisoPrimeiroUso'
 import { BottomNav } from './components/BottomNav'
 import { LembreteBackup } from './components/LembreteBackup'
+import { Sidebar } from './components/Sidebar'
 import { TemaToggle } from './components/TemaToggle'
 import { categoriasPadrao } from './data/categorias'
 import {
@@ -42,30 +43,35 @@ export default function App() {
 
   return (
     <>
-      <div
-        className="mx-auto flex max-w-md justify-end px-2"
-        style={{ paddingTop: 'env(safe-area-inset-top)' }}
-      >
-        <TemaToggle />
+      <Sidebar ativa={tela} onMudar={irPara} />
+
+      <div className="md:pl-56">
+        <div
+          className="mx-auto flex max-w-md justify-end px-2 md:max-w-2xl md:px-8"
+          style={{ paddingTop: 'env(safe-area-inset-top)' }}
+        >
+          <TemaToggle />
+        </div>
+
+        <AvisoPrimeiroUso />
+        {mostrarLembreteBackup ? (
+          <LembreteBackup aoIrParaBackup={() => irPara('backup')} />
+        ) : null}
+
+        <main className="pb-20 md:pb-10">
+          {tela === 'resumo' ? <Resumo /> : null}
+          {tela === 'lancar' ? (
+            <Lancar
+              transacaoEditando={transacaoEditando}
+              aoSalvar={() => irPara('historico')}
+              aoCancelarEdicao={() => irPara('historico')}
+            />
+          ) : null}
+          {tela === 'historico' ? <Historico aoEditar={editar} /> : null}
+          {tela === 'backup' ? <Backup /> : null}
+        </main>
       </div>
 
-      <AvisoPrimeiroUso />
-      {mostrarLembreteBackup ? (
-        <LembreteBackup aoIrParaBackup={() => irPara('backup')} />
-      ) : null}
-
-      <main className="pb-20">
-        {tela === 'resumo' ? <Resumo /> : null}
-        {tela === 'lancar' ? (
-          <Lancar
-            transacaoEditando={transacaoEditando}
-            aoSalvar={() => irPara('historico')}
-            aoCancelarEdicao={() => irPara('historico')}
-          />
-        ) : null}
-        {tela === 'historico' ? <Historico aoEditar={editar} /> : null}
-        {tela === 'backup' ? <Backup /> : null}
-      </main>
       <BottomNav ativa={tela} onMudar={irPara} />
     </>
   )
