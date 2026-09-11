@@ -52,7 +52,7 @@ export function Historico({ aoEditar }: HistoricoProps) {
           onChange={(e) =>
             setFiltroTipo(e.target.value as TipoTransacao | 'todos')
           }
-          className="rounded-lg border border-line px-3 py-2 font-sans text-sm text-ink"
+          className="rounded-lg border border-line bg-paper px-3 py-2 font-sans text-sm text-ink"
         >
           <option value="todos">Todos os tipos</option>
           <option value="despesa">Despesas</option>
@@ -62,7 +62,7 @@ export function Historico({ aoEditar }: HistoricoProps) {
         <select
           value={filtroCategoriaId}
           onChange={(e) => setFiltroCategoriaId(e.target.value)}
-          className="rounded-lg border border-line px-3 py-2 font-sans text-sm text-ink"
+          className="rounded-lg border border-line bg-paper px-3 py-2 font-sans text-sm text-ink"
         >
           <option value="todas">Todas as categorias</option>
           {categorias.map((c) => (
@@ -76,7 +76,7 @@ export function Historico({ aoEditar }: HistoricoProps) {
           type="month"
           value={filtroMes}
           onChange={(e) => setFiltroMes(e.target.value)}
-          className="rounded-lg border border-line px-3 py-2 font-sans text-sm text-ink"
+          className="rounded-lg border border-line bg-paper px-3 py-2 font-sans text-sm text-ink"
         />
       </div>
 
