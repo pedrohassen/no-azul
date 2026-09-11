@@ -93,7 +93,7 @@ export function Lancar({
               setTipo(opcao)
               setCategoriaId('')
             }}
-            className={`flex-1 rounded-md py-2 font-sans text-sm font-medium transition-colors ${
+            className={`flex min-h-11 flex-1 items-center justify-center rounded-md font-sans text-sm font-medium transition-colors ${
               tipo === opcao
                 ? opcao === 'despesa'
                   ? 'bg-vermelho text-contraste'

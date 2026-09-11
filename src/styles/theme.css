@@ -7,16 +7,18 @@
  */
 
 :root {
-  /* Reativo à classe .dark — evita que o navegador tematize controles nativos
-     (select, input date, scrollbar) pela preferência do SO, ignorando o tema real
-     da página. Hoje sempre "light" (toggle ainda não existe, ver Fase 4), mas já
-     evita o bug mesmo com o SO do celular em modo escuro. */
+  /* Reativo à classe .dark (ver `lib/tema.ts` + `TemaToggle`) — evita que o
+     navegador tematize controles nativos (select, input date, scrollbar) pela
+     preferência do SO, ignorando o tema real da página. */
   color-scheme: light;
 
   --paper: #f7f8fa;
   --ink: #14181f;
   --muted: #6b7280;
-  --line: #e2e5eb;
+  /* 3.5:1 contra --paper — cumpre o mínimo de 3:1 do WCAG 1.4.11 pra contorno de
+     componente de UI (botão "contorno", input, chip). O tom anterior (#e2e5eb)
+     media 1.19:1, quase invisível. */
+  --line: #7c8499;
   --azul: #1d4ed8;
   --vermelho: #b91c1c;
   --contraste: #ffffff;
@@ -28,7 +30,8 @@
   --paper: #0f1420;
   --ink: #e8ebf1;
   --muted: #8b93a3;
-  --line: #232a3a;
+  /* Mesmo motivo do :root — 3.7:1 contra --paper, cumpre o 3:1 do WCAG 1.4.11. */
+  --line: #647089;
   --azul: #5b8cff;
   --vermelho: #f87171;
   --contraste: #0f1420;
