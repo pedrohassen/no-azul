@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { AvisoPrimeiroUso } from './components/AvisoPrimeiroUso'
 import { BottomNav } from './components/BottomNav'
 import { LembreteBackup } from './components/LembreteBackup'
+import { TemaToggle } from './components/TemaToggle'
 import { categoriasPadrao } from './data/categorias'
 import {
   inicializarCategoriasPadrao,
@@ -41,6 +42,13 @@ export default function App() {
 
   return (
     <>
+      <div
+        className="mx-auto flex max-w-md justify-end px-2"
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
+      >
+        <TemaToggle />
+      </div>
+
       <AvisoPrimeiroUso />
       {mostrarLembreteBackup ? (
         <LembreteBackup aoIrParaBackup={() => irPara('backup')} />

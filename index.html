@@ -6,10 +6,22 @@
     <link rel="apple-touch-icon" href="/icons/icon-192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#1d4ed8" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f8fa" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f1420" />
     <link rel="preload" href="/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
     <title>No Azul</title>
     <meta name="description" content="Controle pessoal de receitas e despesas — sem backend, dados só no seu aparelho, funciona offline. Projeto conceito de Pedro Hasse Niemczewski." />
+
+    <script>
+      // Aplica o tema antes do render pra não piscar (FOUC).
+      ;(function () {
+        try {
+          var t = localStorage.getItem('no-azul:tema')
+          var escuro = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (escuro) document.documentElement.classList.add('dark')
+        } catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

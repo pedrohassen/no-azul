@@ -2,7 +2,7 @@
 @import 'tailwindcss';
 @import './theme.css';
 
-/* Dark mode acionado pela classe `.dark` no <html> (toggle entra depois na Fase 4). */
+/* Dark mode acionado pela classe `.dark` no <html> (toggle em `TemaToggle`). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
