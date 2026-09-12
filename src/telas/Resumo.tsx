@@ -53,13 +53,13 @@ export function Resumo() {
             {formatMoeda(saldoTotal)}
           </p>
         </div>
-        <div className="rounded-xl border border-line p-4 md:p-5">
+        <div className="rounded-xl border border-line p-4 text-center md:p-5">
           <p className="mb-1 font-sans text-xs text-muted">Receitas (mês)</p>
           <p className="font-sans text-lg font-medium text-azul">
             {formatMoeda(receitasMes)}
           </p>
         </div>
-        <div className="rounded-xl border border-line p-4 md:p-5">
+        <div className="rounded-xl border border-line p-4 text-center md:p-5">
           <p className="mb-1 font-sans text-xs text-muted">Despesas (mês)</p>
           <p className="font-sans text-lg font-medium text-vermelho">
             {formatMoeda(despesasMes)}
